@@ -1,0 +1,15 @@
+#DAEMON LPDF - /etc/systemd/system/lpdf.service
+
+
+[Unit]
+Description=lpdf daemon
+
+[Service]
+Type=simple
+WorkingDirectory=/usr/bin
+ExecStart=/bin/bash /usr/bin/lpdf.daemon.sh
+Restart=on-failure
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
